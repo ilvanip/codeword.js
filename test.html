@@ -1,0 +1,18 @@
+<canvas id="c" height=400px width=900px></canvas>
+Hello World
+<script type="text/javascript" src="cw/theme.js"></script>
+<script type="text/javascript" src="cw/language.js"></script>
+<script type="text/javascript" src="codeword.js"></script>
+
+<script type="text/javascript">
+	const canvas=document.getElementById('c');
+	const config={
+		font_size:13,
+		interval:50,
+		theme:cw_Cobalt,
+		language:'C'
+	};
+
+	const cw=new cw_Codeword(canvas,config);
+	cw.animate();
+</script>
