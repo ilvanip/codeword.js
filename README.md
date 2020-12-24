@@ -60,4 +60,13 @@
 </script>
 ```
 
+## GIF:
+
+![Demo here](./demo.gif)
+
+## Acknowledgements:
+
+- #### The 'Cobalt' style has been taken from the Gedit Cobalt theme by Will Farrington.
+- #### The definitions for the languages are according to those specified in the gtksourceview .lang files in Linux.
+
 
