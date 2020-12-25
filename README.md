@@ -45,7 +45,7 @@
         - ##### The theme to use.(mandatory)
     - #### Animation interval.
         - ##### The animation interval.
-- ### All of these are set in a configuration object and then passed as the second parameter of the cw_Codewrod class.
+- ### All of these are set in a configuration object and then passed as the second parameter of the CODEWORD.Codeword class.
 
 ## Usage:
 
