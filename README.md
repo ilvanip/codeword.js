@@ -26,11 +26,11 @@
 
 - ### codeword.js contains a single JS object called CODEWORD which serves as the namespace for the library.
 - ### The namespace contains the following 'sub-namespaces':
-    - ### utilities:All utility functions.
-    - ### languageSpec:The specifications for the languages supported.
-    - ### themes:The supported themes.
-    - ### Codeword:The main class containing the animations.
-    - ### init:All setup functions. These are run automatically when the library loads.
+    - #### utilities:All utility functions.
+    - #### languageSpec:The specifications for the languages supported.
+    - #### themes:The supported themes.
+    - #### Codeword:The main class containing the animations.
+    - #### init:All setup functions. These are run automatically when the library loads.
 
 ## Configuration:
 
