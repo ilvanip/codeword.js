@@ -2,6 +2,10 @@
 
 ### *Bring code-based styles and themes to your webpages.*
 
+## GIF:
+
+![Demo here](./demo.gif)
+
 ## Included files:
 
 - #### cw: Directory containing all language definitions and themes used by the library.
@@ -11,8 +15,8 @@
 
 ## What this library needs:
 
-- #### The library is written in pure Vanilla JS. There are no dependencies on other JS libraries.
-- #### The library relys on the <canvas> html element for its animation.
+- #### The library is written in Vanilla JS. There are no dependencies on other JS libraries.
+- #### The library relys on the html canvas element for its animation.
 
 ## Core Classes:
 
@@ -60,9 +64,6 @@
 </script>
 ```
 
-## GIF:
-
-![Demo here](./demo.gif)
 
 ## Acknowledgements:
 

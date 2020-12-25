@@ -1,0 +1,15 @@
+<canvas id="c" height=400px width=900px></canvas>
+Hello World
+<script type="text/javascript" src="codeword.js"></script>
+
+<script type="text/javascript">
+	const canvas=document.getElementById('c');
+	const config={
+		font_size:10,
+		interval:100,
+		theme:CODEWORD.themes.Cobalt,
+		language:'Python3'
+	};
+	const cw=new CODEWORD.Codeword(canvas,config);
+	cw.animate();
+</script>
