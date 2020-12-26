@@ -163,6 +163,30 @@ CODEWORD.themes={
 		//Return the target theme.
 		return target_theme;
 	},
+	//Solarized dark theme by Craig Russell.
+	Solarized_Dark:function(language)
+	{
+		const violet='#6C71C4';
+		const yellow='#B58900';
+		const base03_02_blend='#032F3B';
+		const orange='#CB4B16';
+		const cyan='#2AA198';
+		const green='#859900';
+
+		const global={
+			background:base03_02_blend,
+			keyword:orange,
+			type:yellow,
+			preprocessor:violet,
+			special_constants:cyan,
+			special_char:green,
+			storage_class:yellow,
+		};
+
+		let override={};
+		const target_theme=Object.assign({},global,override);
+		return target_theme;
+	},
 };
 
 /*
