@@ -108,22 +108,32 @@ CODEWORD.themes={
 	//The cobalt theme by Will Farrington.
 	Cobalt:function(language)
 	{
+		/*
+		Colors:
+		*/
+		
+		const dark_blue='#00213f';
+		const bright_orange='#ff9d00';
+		const teal_blue='#80ffbb';
+		const light_grey='#cccccc';
+		const nail_polish_pink='#ff0044';
+
 		//Global styles.
 		const global={
 			//The background color.
-			background:'#00213f',//Dark blue.
+			background:dark_blue,
 			//Keywords
-			keyword:'#ff9d00',//Bright Orange.
+			keyword:bright_orange,
 			//Types
-			type:'#80ffbb',//Teal blue.
+			type:teal_blue,
 			//Storage classes
-			storage_class:'#80ffbb',//Teal blue.
+			storage_class:teal_blue,
 			//Special characters/functions etc.
-			special_char:'#cccccc',//Light grey.
+			special_char:light_grey,
 			//Special constants.
-			special_constants:'#ff0044',//Nail polish pink.
+			special_constants:nail_polish_pink,
 			//Preprocessor.
-			preprocessor:'#cccccc',//Light grey.
+			preprocessor:light_grey,
 		};
 
 		/*
@@ -133,7 +143,7 @@ CODEWORD.themes={
 		//C
 		const C={
 			//Preprocessor.
-			preprocessor:'#80ffbb',//Teal blue.
+			preprocessor:teal_blue,
 		};
 
 		//Store the override rules if any.
