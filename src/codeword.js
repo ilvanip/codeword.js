@@ -226,7 +226,7 @@ CODEWORD.Codeword=function(canvas,configuration)
 		__context.fillStyle=__theme.background;
 		__context.fillRect(0,0,max_width,max_height);
 
-		//The animation function.
+		//The animation function responsible for the scroll effect.
 		const __animate=()=>
 		{
 			//If the Y-coordinate goes beyond the limit of the canvas, stop rendering and return.
@@ -282,7 +282,5 @@ CODEWORD.init=function()
 }
 //Initialize the library.
 CODEWORD.init();
-
-
 
 
