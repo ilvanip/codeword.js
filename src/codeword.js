@@ -46,17 +46,13 @@ All language definitions.
 */
 CODEWORD.languageSpec=function(language_name)
 {
-	//C
 	const C={
-		//Preprocessor directives.
 		preprocessor:'include define pragma ifdef'.split(' '),
 		keyword:'break continue return switch case if else for do while goto default typedef struct'.split(' '),
-		//Primitive types.
 		type:'char int void float double long unsigned signed'.split(' '),
 		storage_class:'const extern static inline'.split(' '),
 	};
 	const Java={
-		//Primitive types.
 		type:'boolean byte char double float int long short void'.split(' '),
 		keyword:[
 			'break','continue','return',
@@ -65,9 +61,7 @@ CODEWORD.languageSpec=function(language_name)
 			'for','do','while',
 			'try','catch','finally',
 			'new','super','this'],
-		//Null value and boolean literals.
 		special_constants:'true false null'.split(' '),
-		//Scope declarations.
 		storage_class:[
 			'class','interface',
 			'extends','implements',
@@ -78,7 +72,6 @@ CODEWORD.languageSpec=function(language_name)
 			'throws'],
 	};
 	const Python3={
-		//Preprocessor directives.
 		preprocessor:'import as from'.split(' '),
 		keyword:[
 			'and','or','not','in',
@@ -92,11 +85,25 @@ CODEWORD.languageSpec=function(language_name)
 			'def','del'],
 		special_constants:'True False None NotImplemented'.split(' '),
 	};
+	const Javascript={
+		special_constants:'undefined null true false'.split(' '),
+		keyword:[
+			'in','function',
+			'break','continue','return',
+			'if','else',
+			'switch','case','default',
+			'for','while','do',
+			'try','catch','finally',
+			'new','super','this',
+			'instanceof','typeof'],
+		type:'Infinity NaN Error Number Object String'.split(' '),
+	};
 	switch(language_name)
 	{
 		case 'C':return C;
 		case 'Java':return Java;
 		case 'Python3':return Python3;
+		case 'Javascript':return Javascript;
 		default:throw Error(`Undefined language spec [${spec_name}]`);
 	}
 };
