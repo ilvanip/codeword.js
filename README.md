@@ -70,6 +70,7 @@
 ## Acknowledgements:
 
 - ### The 'Cobalt' style has been taken from the Gedit Cobalt theme by Will Farrington.
+- ### The 'Solarized_Dark' style has been taken from the Gedit Solarized Dark theme by Craig Russell.
 - ### The definitions for the languages are according to those specified in the gtksourceview .lang files in Linux.
 
 
