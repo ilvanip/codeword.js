@@ -1,0 +1,10 @@
+total 5448
+drwxrwxr-x  4 abhisheks abhisheks    4096 Dec 27 01:37 .
+drwxr-xr-x 12 abhisheks abhisheks    4096 Dec 23 14:55 ..
+-rw-rw-r--  1 abhisheks abhisheks 3438857 Dec 25 22:23 demo.gif
+-rw-rw-r--  1 abhisheks abhisheks 2112839 Dec 25 22:19 demo.mkv
+drwxr-xr-x  8 abhisheks abhisheks    4096 Dec 26 13:43 .git
+-rw-rw-r--  1 abhisheks abhisheks       6 Dec 25 00:08 .gitignore
+-rw-r--r--  1 abhisheks abhisheks       0 Dec 27 01:37 permdump.txt
+-rw-rw-r--  1 abhisheks abhisheks    2574 Dec 26 13:43 README.md
+drwxrwxr-x  2 abhisheks abhisheks    4096 Dec 26 20:32 src

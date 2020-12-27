@@ -1,0 +1,7 @@
+total 36
+drwxrwxr-x 2 abhisheks abhisheks 4096 Dec 27 01:37 .
+drwxrwxr-x 4 abhisheks abhisheks 4096 Dec 27 01:37 ..
+-rw-rw-r-- 1 abhisheks abhisheks 8924 Dec 26 20:32 codeword2.js
+-rw-rw-r-- 1 abhisheks abhisheks 9243 Dec 26 20:19 codeword.js
+-rw-r--r-- 1 abhisheks abhisheks    0 Dec 27 01:37 permdump.txt
+-rw-rw-r-- 1 abhisheks abhisheks  371 Dec 26 20:29 test.html

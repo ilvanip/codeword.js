@@ -47,13 +47,14 @@ All language definitions.
 CODEWORD.languageSpec=function(language_name)
 {
 	const C={
+		type:'char int void float double long unsigned signed'.split(' '),
 		preprocessor:'include define pragma ifdef'.split(' '),
 		keyword:'break continue return switch case if else for do while goto default typedef struct'.split(' '),
-		type:'char int void float double long unsigned signed'.split(' '),
 		storage_class:'const extern static inline'.split(' '),
 	};
 	const Java={
 		type:'boolean byte char double float int long short void'.split(' '),
+		preprocessor:'import package'.split(' '),
 		keyword:[
 			'break','continue','return',
 			'switch','case','default',
@@ -86,7 +87,7 @@ CODEWORD.languageSpec=function(language_name)
 		special_constants:'True False None NotImplemented'.split(' '),
 	};
 	const Javascript={
-		special_constants:'undefined null true false'.split(' '),
+		type:'Infinity NaN Error Number Object String'.split(' '),
 		keyword:[
 			'in','function',
 			'break','continue','return',
@@ -96,7 +97,7 @@ CODEWORD.languageSpec=function(language_name)
 			'try','catch','finally',
 			'new','super','this',
 			'instanceof','typeof'],
-		type:'Infinity NaN Error Number Object String'.split(' '),
+		special_constants:'undefined null true false'.split(' '),
 	};
 	switch(language_name)
 	{
@@ -104,7 +105,7 @@ CODEWORD.languageSpec=function(language_name)
 		case 'Java':return Java;
 		case 'Python3':return Python3;
 		case 'Javascript':return Javascript;
-		default:throw Error(`Undefined language spec [${spec_name}]`);
+		default:throw Error(`Undefined language spec [${language_name}]`);
 	}
 };
 
@@ -113,12 +114,9 @@ All theme definitions.
 */
 CODEWORD.themes={
 	//The cobalt theme by Will Farrington.
-	Cobalt:function(language)
+	Cobalt:function()
 	{
-		/*
-		Colors:
-		*/
-		
+		//Colors:
 		const dark_blue='#00213f';
 		const bright_orange='#ff9d00';
 		const teal_blue='#80ffbb';
@@ -127,44 +125,32 @@ CODEWORD.themes={
 
 		//Global styles.
 		const global={
-			//The background color.
 			background:dark_blue,
-			//Keywords
 			keyword:bright_orange,
-			//Types
 			type:teal_blue,
-			//Storage classes
 			storage_class:teal_blue,
 			//Special characters/functions etc.
 			special_char:light_grey,
-			//Special constants.
 			special_constants:nail_polish_pink,
-			//Preprocessor.
 			preprocessor:light_grey,
 		};
 
-		/*
-		Language-specific overrides
-		*/
+		//Language-specific overrides
 
-		//C
 		const C={
-			//Preprocessor.
 			preprocessor:teal_blue,
 		};
 
-		//Store the override rules if any.
-		//If no rules are specified, then this remains an empty object.
-		let override={};
-		//Get the local style rules if any.
-		if(language==='C')override=C;
-		//Fill out the target theme to be returned.
-		const target_theme=Object.assign({},global,override);
-		//Return the target theme.
-		return target_theme;
-	},
+		return {
+			global:global,
+			overrides:{
+				C:C,
+			},//end of overrides.
+		};//end of return.
+	}(),//Call the anonymous function to set the theme.
+
 	//Solarized dark theme by Craig Russell.
-	Solarized_Dark:function(language)
+	Solarized_Dark:function()
 	{
 		const violet='#6C71C4';
 		const yellow='#B58900';
@@ -172,7 +158,6 @@ CODEWORD.themes={
 		const orange='#CB4B16';
 		const cyan='#2AA198';
 		const green='#859900';
-
 		const global={
 			background:base03_02_blend,
 			keyword:orange,
@@ -182,11 +167,26 @@ CODEWORD.themes={
 			special_char:green,
 			storage_class:yellow,
 		};
+		return {
+			global:global,
+		};//end of return.
+	}(),//Call the anonymous function to set the theme.
+};//end of CODEWORD.themes.
 
-		let override={};
-		const target_theme=Object.assign({},global,override);
-		return target_theme;
-	},
+CODEWORD.themeSpec=function(theme,language)
+{
+	//Return the override rules if any.
+	//If no rules are specified, then an empty object is returned.
+	const __getOverride=()=>
+	{
+		const overrides=theme.overrides;
+		if(overrides===undefined)return {};
+		return (overrides[language]===undefined?{}:overrides[language]);
+	};
+	//Fill out the target theme to be returned.
+	const target_theme=Object.assign({},theme.global,__getOverride());
+	//Return the target theme.
+	return target_theme;
 };
 
 /*
@@ -214,7 +214,7 @@ CODEWORD.Codeword=function(canvas,configuration)
 	//The theme to use while rendering:
 	//Get the name from the configuration. Use that to get the theme object.
 	const __theme_name=CODEWORD.utilities.get(configuration,'theme',undefined);
-	const __theme=__theme_name(__language_name);
+	const __theme=CODEWORD.themeSpec(__theme_name,__language_name);
 
 	//Rendering time interval.
 	const __interval=CODEWORD.utilities.get(configuration,'interval',40);
